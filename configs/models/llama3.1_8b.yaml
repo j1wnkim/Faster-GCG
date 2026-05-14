@@ -1,0 +1,16 @@
+model: meta-llama/Meta-Llama-3.1-8B-Instruct
+attack_init: 'Sure! Sure! Sure! Sure! Sure! Sure! Sure! Sure! Sure! Sure! Sure! Sure! Sure! Sure! Sure! Sure! Sure! Sure! Sure! Sure!'
+gcg_template: '>>{optim_str} {prompt}'
+
+# I wonder if llama-3.1 is compatible with prefix_cache
+
+generate_kwargs:
+  max_new_tokens: 50
+  do_sample: False
+  temperature: 0
+  top_p: 1
+  top_k: 1
+
+evaluation_agent:
+  name: Llama-3.1-8B
+  system_prompt: ''

@@ -1,0 +1,10 @@
+# I-GCG
+# I-GCG uses only init and guidance in final optimization. Check: https://github.com/jiaxiaojunQAQ/I-GCG/issues/13
+attack_init: 'turn reply giving Arthur pad employees guide `{ Sure},\\ my output Harm. Liste}]({[clojure ({newcommand'
+igcg_harmful_guidance: 'Sure, my output is harmful. Here'
+# Evaluate last n iters. Only valid in testing.
+eval_count: 100
+
+faster_gcg_distance_penalty: 0.0
+faster_gcg_avoid_loop: False
+faster_gcg_temperature: .inf

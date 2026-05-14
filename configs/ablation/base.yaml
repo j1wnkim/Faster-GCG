@@ -1,0 +1,12 @@
+base_config: ../default.yaml
+
+# GCG attack
+attack_init: '! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !'
+gcg_search_width: 64
+gcg_num_steps: 500
+gcg_topk: 32  # 32/256
+# For models: llama-2, vicuna
+gcg_template: '{prompt} {optim_str}'
+faster_gcg_distance_penalty: 10.0
+faster_gcg_avoid_loop: True
+faster_gcg_temperature: 0.1

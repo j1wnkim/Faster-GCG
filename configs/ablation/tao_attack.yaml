@@ -1,0 +1,12 @@
+# TAO attack
+# tao_alpha = 0.2, w = 5, mu = 1.5e-3 hard-coded
+# temperature re-used for TAO
+faster_gcg_distance_penalty: 0.0
+faster_gcg_avoid_loop: False
+faster_gcg_temperature: 0.5
+attack:
+  type_: TAO
+  batch_size: 64
+  verbosity: WARNING
+  # Uncomment this line for Qwen3.5
+  # use_prefix_cache: False

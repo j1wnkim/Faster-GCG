@@ -1,0 +1,28 @@
+# All supported models
+supported_models:
+    # ---- Local deployment ----
+    Llama-2-7b:
+        model: meta-llama/Llama-2-7b-chat-hf
+        engine: vllm
+        server: http://localhost:8000/v1/
+        num_workers: 32
+
+    gpt-oss-20b:
+        model: openai/gpt-oss-20b
+        engine: vllm
+        server: http://localhost:8001/v1/
+        num_workers: 32
+
+    Llama-3.1-8B:
+        model: meta-llama/Meta-Llama-3.1-8B-Instruct
+        engine: vllm
+        server: http://localhost:8002/v1/
+        num_workers: 32
+
+    # ---- API ----
+    gemini-3-flash-preview:
+        model: gemini-3-flash-preview
+        engine: openai_completion
+        server: https://www.dmxapi.cn/v1/
+        api_key: ${DMX_API_KEY}
+        num_workers: 16

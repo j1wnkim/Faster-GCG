@@ -1,0 +1,3 @@
+base_config: qwen3_4b.yaml
+attack_init: ' ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !'
+gcg_template: '{prompt}{optim_str}'

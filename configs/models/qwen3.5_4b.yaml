@@ -1,0 +1,26 @@
+model: Qwen/Qwen3.5-4B
+attack_init: ' ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !'
+gcg_template: '>>{optim_str} {prompt}'
+attack:
+  type_: GCG
+  batch_size: 32
+  verbosity: WARNING
+  # Qwen3.5 is incompatible with prefix_cache
+  use_prefix_cache: False
+  # Faster-GCG
+  distance_penalty_option: 2
+  temperature_option: 1
+
+generate_kwargs:
+  max_new_tokens: 50
+  do_sample: False
+  temperature: 0
+  top_p: 1
+  top_k: 1
+
+evaluation_agent:
+  name: Qwen3.5-4B
+  system_prompt: null
+  extra_body:
+    chat_template_kwargs:
+      enable_thinking: False

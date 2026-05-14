@@ -1,0 +1,67 @@
+[project]
+name = "faster-gcg"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "datasets>=4.3.0",
+    "ollama>=0.6.1",
+    "openai>=2.8.1",
+    "pydantic>=2.12.5",
+    "python-dotenv>=1.2.1",
+    "scipy>=1.16.2",
+    "seaborn>=0.13.2",
+    "sentencepiece>=0.2.1",
+    "swanlab>=0.6.13",
+    "tiktoken>=0.12.0",
+    "torch>=2.7.0,<2.10.0",
+    "torch-c-dlpack-ext>=0.1.4",
+    "torchvision>=0.20.0",
+    "transformers[torch]>=5.2.0",
+    "wandb>=0.22.2",
+]
+
+[dependency-groups]
+dev = [
+    "coverage>=7.11.0",
+    "notebook>=7.5.5",
+    "pre-commit>=4.5.1",
+    "pytest>=9.0",
+]
+flash-attn = [
+    "flash-attn>=2.7.0,<2.8.0",
+]
+fla = [
+    "flash-linear-attention>=0.4.2",
+]
+
+[[tool.uv.index]]
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
+default = true
+
+[tool.pytest]
+minversion = "9.0"
+testpaths = [
+    "tests",
+]
+
+[tool.coverage.run]
+omit = [
+    "tests/*",
+    # omit pytorch-generated files in /tmp
+    "/tmp/*",
+    "/private/*",
+]
+
+[tool.ruff]
+# Assume Python 3.12
+target-version = "py312"
+
+[tool.ruff.lint]
+ignore = [
+    "E741",
+    "F401",
+    "F403",
+    "F405",
+]

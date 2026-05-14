@@ -1,0 +1,5 @@
+gcg_search_width: 512
+gcg_topk: 256
+faster_gcg_distance_penalty: 0.0
+faster_gcg_avoid_loop: False
+faster_gcg_temperature: .inf

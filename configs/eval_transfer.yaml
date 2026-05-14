@@ -1,0 +1,13 @@
+eval: True
+eval_count: 1
+generate_kwargs:
+  max_new_tokens: 500
+  do_sample: True
+
+model: gemini-3-flash-preview  # only for log
+evaluation_agent:
+  # model: will be automatically set
+  engine: openai_completion
+  server: https://www.dmxapi.cn/v1/
+  api_key: ${DMX_API_KEY}
+  num_workers: 16

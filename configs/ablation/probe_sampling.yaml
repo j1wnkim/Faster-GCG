@@ -1,0 +1,12 @@
+# GCG w/ probe sampling
+faster_gcg_distance_penalty: 0.0
+faster_gcg_avoid_loop: False
+faster_gcg_temperature: .inf
+attack:
+  type_: probe_sampling
+  batch_size: 64
+  verbosity: WARNING
+  probe_sampling_config:
+    draft_model: openai-community/gpt2
+    r: 8
+    sampling_factor: 16

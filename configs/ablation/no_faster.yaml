@@ -1,0 +1,3 @@
+faster_gcg_distance_penalty: 0.0
+faster_gcg_avoid_loop: False
+faster_gcg_temperature: .inf
