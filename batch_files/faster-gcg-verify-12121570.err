@@ -1,0 +1,32 @@
+CLIConfig(model='meta-llama/Llama-2-7b-chat-hf', enable_thinking=False, resume=-1, load='', generate_kwargs={'max_new_tokens': 50, 'do_sample': False, 'temperature': 0, 'top_p': 1}, tokenize_kwargs={}, model_kwargs={}, attack={'type_': 'GCG', 'batch_size': 64, 'verbosity': 'WARNING', 'distance_penalty_option': 2, 'temperature_option': 1, 'optim_str_init': '! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !', 'search_width': 64, 'num_steps': 500, 'topk': 32, 'template': ' {optim_str} {prompt}', 'distance_penalty': 10.0, 'avoid_loop': True, 'temperature': 0.1, 'igcg_harmful_guidance': None}, attack_init='! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !', gcg_search_width=64, gcg_num_steps=500, gcg_topk=32, gcg_template=' {optim_str} {prompt}', faster_gcg_distance_penalty=10.0, faster_gcg_avoid_loop=True, faster_gcg_temperature=0.1, igcg_harmful_guidance=None, data_dir='./dataset', dataset='JailbreakBench/JBB-Behaviors', dataset_split=None, subset=0, supported_models={'Llama-2-7b': {'model': 'meta-llama/Llama-2-7b-chat-hf', 'engine': 'vllm', 'server': 'http://localhost:8000/v1/', 'num_workers': 32}, 'gpt-oss-20b': {'model': 'openai/gpt-oss-20b', 'engine': 'vllm', 'server': 'http://localhost:8001/v1/', 'num_workers': 32}, 'Llama-3.1-8B': {'model': 'meta-llama/Meta-Llama-3.1-8B-Instruct', 'engine': 'vllm', 'server': 'http://localhost:8002/v1/', 'num_workers': 32}, 'gemini-3-flash-preview': {'model': 'gemini-3-flash-preview', 'engine': 'openai_completion', 'server': 'https://www.dmxapi.cn/v1/', 'api_key': '${DMX_API_KEY}', 'num_workers': 16}}, evaluation_agent={'system_prompt': '', 'model': 'meta-llama/Llama-2-7b-chat-hf', 'engine': 'vllm', 'server': 'http://localhost:8000/v1/', 'num_workers': 32}, evaluation_test=[{'name': 'gpt4_judge_json', 'model_config': {'model': 'openai/gpt-oss-20b', 'engine': 'vllm', 'server': 'http://localhost:8001/v1/', 'num_workers': 32}}, {'name': 'strong_reject_json', 'model_config': {'model': 'meta-llama/Meta-Llama-3.1-8B-Instruct', 'engine': 'vllm', 'server': 'http://localhost:8002/v1/', 'num_workers': 32}}], model_kwargs_=[], dtype='bfloat16', device='cuda:0', dist_bn='none', amp=False, torchcompile=None, torchcompile_mode=None, judge_threshold=0.8, attack_kwargs_=[], ckpt_hist=3, ckpt_interval=10, debug=True, eval=False, eval_best=False, eval_last=False, eval_count=10, expr_path=None, expr_name='', keep_recovery_='default', keep_recovery='default', log=['stream'], opt_level=0, output_dir='./output', overwrite=False, seed=42, val_interval=1, verify=True, wandb_project='Faster-GCG', wandb_name=None, wandb_tags=None, wandb_resume_id=None, workers=0, save_raw_data=False, comment=None, distributed=False, local_rank=0, rank=0, world_size=1)
+Experiment path is './output/20261102-083514'.
+[tools.runner.runner::238:DEBUG]: Logging to: file, csv
+Log name: train
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[huggingface_hub.utils._http::993:WARNING]: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating harmful split:   0%|          | 0/100 [00:00<?, ? examples/s][fsspec.local::379:DEBUG]: open file: /home/kim5277/.cache/huggingface/datasets/JailbreakBench___jbb-behaviors/behaviors/0.0.0/886acc352a31533ffbcf4ef22c744658688086fc.incomplete/jbb-behaviors-harmful-00000-00000-of-NNNNN.arrow
+Generating harmful split: 100%|██████████| 100/100 [00:00<00:00, 1054.26 examples/s]
+Generating benign split:   0%|          | 0/100 [00:00<?, ? examples/s][fsspec.local::379:DEBUG]: open file: /home/kim5277/.cache/huggingface/datasets/JailbreakBench___jbb-behaviors/behaviors/0.0.0/886acc352a31533ffbcf4ef22c744658688086fc.incomplete/jbb-behaviors-benign-00000-00000-of-NNNNN.arrow
+Generating benign split: 100%|██████████| 100/100 [00:00<00:00, 12926.23 examples/s]
+[fsspec.local::379:DEBUG]: open file: /home/kim5277/.cache/huggingface/datasets/JailbreakBench___jbb-behaviors/behaviors/0.0.0/886acc352a31533ffbcf4ef22c744658688086fc.incomplete/dataset_info.json
+Attack generation briefing:
+    Dataset: JailbreakBench/JBB-Behaviors (Length: 100)
+    Model: Llama-2-7b-chat-hf
+    Adversary: GCG
+        Config: {
+            "type_": "GCG",
+            "batch_size": 64,
+            "verbosity": "WARNING",
+            "distance_penalty_option": 2,
+            "temperature_option": 1,
+            "optim_str_init": "! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !",
+            "search_width": 64,
+            "num_steps": 500,
+            "topk": 32,
+            "template": " {optim_str} {prompt}",
+            "distance_penalty": 10.0,
+            "avoid_loop": true,
+            "temperature": 0.1,
+            "igcg_harmful_guidance": null
+        }
+Verification completed!

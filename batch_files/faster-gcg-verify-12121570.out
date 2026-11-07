@@ -1,0 +1,4 @@
+Project: /home/kim5277/Faster-GCG
+Container: /scratch/gilbreth/kim5277/container_files/torch.sif
+Node: gilbreth-d003
+GPU(s): 0

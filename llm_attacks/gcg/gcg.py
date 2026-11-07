@@ -171,9 +171,9 @@ class GCG:
 
         # Faster-GCG - 2: Temperature sampling
         temperature = self.config.temperature
-        # if not math.isinf(temperature) and self.config.num_steps > 1:
-        #     # Annealing
-        #     temperature = self.config.temperature / math.log2(self.step + 2)
+        if not math.isinf(temperature) and self.config.num_steps > 1:
+            # Annealing
+            temperature = self.config.temperature / math.log2(self.step + 2)
         if math.isinf(temperature):
             # Original GCG: random sampling
             # Random position(s) for each sample in batch
